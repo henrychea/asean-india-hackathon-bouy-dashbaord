@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coast Guard Dashboard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="https://jvectormap.com/css/jquery-jvectormap-2.0.1.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Live</a>
+        </li>
+      </ul>
+
+      <!-- Right navbar links -->
+
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="indexhtml" class="brand-link">
+        <span class="font-weight-light text-center">BUOY MONITOR</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <!-- <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div> -->
+          <div class="info">
+            <a href="#" class="d-block">BUOY 012A</a>
+          </div>
+        </div>
+
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+          <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-sidebar">
+                <i class="fas fa-search fa-fw"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="index.html" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>Home</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="ais.html" class="nav-link">
+                <i class="nav-icon fas fa-broadcast-tower"></i>
+                <p>AIS DATA</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-satellite-dish"></i>
+                <p>RADAR DATA</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="camera.html" class="nav-link">
+                <i class="nav-icon fas fa-video"></i>
+                <p>CAMERA VISION</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Camera Vision</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3 id="gpsVal">0</h3>
+
+                  <p>GPS SIGNAL STRENGTH</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-satellite"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3 id="gprsVal">0</h3>
+
+                  <p>GPRS SIGNAL STRENGTH</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-signal"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3 id="batteryVal">0</h3>
+
+                  <p>BATTERY %</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-battery-full"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success" id="statusValBg">
+                <div class="inner">
+                  <h3 id="statusVal">AWAITING</h3>
+
+                  <p>STATUS</p>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-life-ring"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3 id="rollVal">0</h3>
+
+                  <p>ROLL</p>
+                </div> 
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3 id="pitchVal">0<sup style="font-size: 20px"></sup></h3>
+
+                  <p>PITCH</p>
+                </div> 
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3 id="yawVal">0</h3>
+
+                  <p>YAW</p>
+                </div> 
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-primary">
+                <div class="inner">
+                  <h3 id="headingVal">0</h3>
+
+                  <p>HEADING</p>
+                </div> 
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+        </div>
+          <!-- /.row -->
+          <center>
+          <iframe id="inlineFrameExample"
+    width="670"
+    height="500"
+    src="http://192.168.0.110:8000/index.html"
+    allowfullscreen>
+</iframe>
+<br>
+<button class="favorite styled"
+        type="button">
+    Toggle Night VISION
+</button>
+</center>
+<style>
+  iframe {
+    align-self: center;
+  }
+  .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+</style>
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+      <div class="p-3">
+        <h5>Title</h5>
+        <p>Sidebar content</p>
+      </div>
+    </aside>
+    <!-- /.control-sidebar -->
+
+    <!-- Main Footer -->
+   
+  <!-- ./wrapper -->
+
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cs.nyu.edu/~kapp/cs101/processing_on_the_web/processing.js.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyBZeoSsZ5sm1Vbh-N4wDjyWtHz2kaGAdC0",
+      authDomain: "buoy-ce1d9.firebaseapp.com",
+      projectId: "buoy-ce1d9",
+      storageBucket: "buoy-ce1d9.appspot.com",
+      messagingSenderId: "190491860104",
+      appId: "1:190491860104:web:fd3b7642b58a092184133d",
+      measurementId: "G-S9DQG0WHZY"
+    };
+ 
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var defaultDatabase = firebase.database();
+    firebase.database.enableLogging(true, true);
+    var ref = firebase.database().ref();
+
+    ref.once("value", (snapshot) => {
+      markers = [
+    {latLng: [snapshot.val()['lat'],snapshot.val()['lon']], name: 'test'},  
+  ];
+      $('#locationVal').html('(' + snapshot.val()['lat'] + ',' + snapshot.val()['lon'] + ')');
+      $('#world-map').vectorMap({
+    map: 'us_mill',
+    scaleColors: ['#C8EEFF', '#0071A4'],
+    normalizeFunction: 'polynomial',
+    hoverOpacity: 0.7,
+    hoverColor: false,
+    markerStyle: {
+      initial: {
+        fill: '#F8E23B',
+        stroke: '#383f47'
+      }
+    },
+    backgroundColor: 'transparent',
+    markers: markers,
+    onMarkerClick: function(e, index){
+      var zParams = {scale: 5, lat: markers[index]['latLng'][0], lng: markers[index]['latLng'][1], x: 0.5, y: 0.5, animate: true};
+      $('#world-map').vectorMap('get','mapObject').setFocus(zParams); 
+    }
+  }); 
+    });
+
+
+    ref.on("value", (snapshot) => {
+      snapshot.forEach(function (childSnapshot) {
+
+        var key = childSnapshot.key;
+        switch (key) {
+          case "battery": {
+            $('#batteryVal').html(childSnapshot.val() + '%');
+            break;
+          }
+          case "gprs": {
+            $('#gprsVal').html(childSnapshot.val() + ' dBm');
+            break;
+          }
+          case "gps": {
+            $('#gpsVal').html(childSnapshot.val()  + ' dBm');
+            break;
+          }
+          case "roll": {
+            $('#rollVal').html(childSnapshot.val());
+            break;
+          }
+          case "pitch": {
+            $('#pitchVal').html(childSnapshot.val());
+            break;
+          }
+          case "yaw": {
+            $('#yawVal').html(childSnapshot.val());
+            break;
+          }
+          case "heading": {
+            $('#headingVal').html(childSnapshot.val() + '°');
+            break;
+          }
+          case "status": { 
+          
+            if(childSnapshot.val()){  
+              $('#statusValBg').removeClass("bg-danger");
+              $('#statusValBg').addClass("bg-success");
+              $('#statusVal').html('Live');
+            } else {
+              $('#statusValBg').removeClass("bg-success");
+              $('#statusValBg').addClass("bg-danger");
+              $('#statusVal').html('Offline');
+            }
+            break;
+          }
+        };
+
+      });
+     
+ 
+    }); 
+    $(function(){  });
+ 
+  </script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="https://jvectormap.com/js/jquery-jvectormap-2.0.5.min.js"></script>
+  <script src="https://jvectormap.com/js/jquery-jvectormap-us-mill.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+
+</body>
+
+</html>
